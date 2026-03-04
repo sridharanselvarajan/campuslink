@@ -1,6 +1,6 @@
 const Session = require('../models/Session');
 const Skill = require('../models/Skill');
-const Timetable = require('../models/Timetable');
+const Timetable = require('../models/TimeTable');
 
 const getDayOfWeek = (dateString) => {
   const date = new Date(dateString);
