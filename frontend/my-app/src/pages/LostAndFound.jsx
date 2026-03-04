@@ -24,6 +24,7 @@ const LostAndFound = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (user) fetchItems();
   }, [user]);

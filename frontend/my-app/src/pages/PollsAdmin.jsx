@@ -8,7 +8,7 @@ import { createPoll, deletePoll, getPolls, updatePoll } from '../services/pollAp
 import './PollsAdmin.css';
 
 const PollsAdmin = () => {
-  const { user } = useContext(AuthContext);
+  const { } = useContext(AuthContext);
   const [polls, setPolls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');

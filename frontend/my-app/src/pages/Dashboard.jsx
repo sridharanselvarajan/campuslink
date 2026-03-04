@@ -37,30 +37,6 @@ const item = {
   }
 };
 
-const welcomeText = {
-  hidden: { opacity: 0, x: -20 },
-  show: { 
-    opacity: 1, 
-    x: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  }
-};
-
-const roleBadge = {
-  hidden: { opacity: 0, scale: 0.8 },
-  show: { 
-    opacity: 1, 
-    scale: 1,
-    transition: {
-      delay: 0.2,
-      type: 'spring',
-      stiffness: 200
-    }
-  }
-};
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);

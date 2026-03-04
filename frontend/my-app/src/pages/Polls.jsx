@@ -6,7 +6,7 @@ import { getPollResults, getPolls, voteOnPoll } from '../services/pollApi';
 import './Polls.css';
 
 const Polls = () => {
-  const { user } = useContext(AuthContext);
+  const { } = useContext(AuthContext);
   const [polls, setPolls] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
