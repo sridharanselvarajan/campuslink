@@ -16,7 +16,7 @@ const app = express();
 // CORS configuration for production
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.vercel.app'] 
+    ? ['https://campuslink-front.vercel.app'] 
     : ['http://localhost:3000'],
   credentials: true
 }));
