@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   COMPLAINTS - DARK PREMIUM THEME
+   ========================================= */
+
+.complaints-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  font-family: 'Inter', sans-serif;
+  color: #f0f0ff;
+  background: #050510;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Glow Blobs */
+.complaints-container::before {
+  content: '';
+  position: absolute;
+  top: 8%;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.13), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.complaints-container::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: -120px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(190, 24, 93, 0.09), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.complaints-title {
+  font-size: 3rem;
+  font-weight: 950;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.04em;
+}
+
+.complaint-new-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 1.1rem 2.2rem;
+  font-size: 1.15rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(190, 24, 93, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 3.5rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.complaint-new-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(190, 24, 93, 0.45);
+}
+
+/* Complaints List */
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.complaint-item {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border-radius: 28px;
+  padding: 2.25rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.complaint-item:hover {
+  transform: translateX(10px) scale(1.01);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.complaint-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+/* Status Badges & Glows */
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-pending {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+.complaint-item:has(.status-pending)::before {
+  background: linear-gradient(to bottom, #ef4444, #be185d);
+  box-shadow: 2px 0 10px rgba(239, 68, 68, 0.3);
+}
+
+.status-in-progress {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+.complaint-item:has(.status-in-progress)::before {
+  background: linear-gradient(to bottom, #f59e0b, #d97706);
+  box-shadow: 2px 0 10px rgba(245, 158, 11, 0.3);
+}
+
+.status-resolved {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.complaint-item:has(.status-resolved)::before {
+  background: linear-gradient(to bottom, #10b981, #059669);
+  box-shadow: 2px 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.complaint-image {
+  max-height: 300px;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  cursor: zoom-in;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  object-fit: cover;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 1.5rem;
+}
+
+.complaint-image:hover {
+  transform: scale(1.02);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+/* Admin Actions */
+.admin-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admin-action-btn {
+  flex: 1;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-action-btn.in-progress { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.admin-action-btn.in-progress:hover { background: #f59e0b; color: #fff; transform: translateY(-3px); }
+
+.admin-action-btn.resolved { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.admin-action-btn.resolved:hover { background: #10b981; color: #fff; transform: translateY(-3px); }
+
+.admin-action-btn.pending { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+.admin-action-btn.pending:hover { background: #ef4444; color: #fff; transform: translateY(-3px); }
+
+.no-complaints {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: rgba(200, 200, 255, 0.3);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .complaints-container { padding: 2rem 1rem; }
+  .complaints-title { font-size: 2.2rem; }
+  .complaint-item { padding: 1.5rem; }
+  .admin-actions { flex-direction: column; }
+}

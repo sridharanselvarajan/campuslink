@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   SKILL FORM - DARK PREMIUM THEME
+   ========================================= */
+
+.skill-form-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 3.5rem 3rem;
+  background: rgba(15, 12, 41, 0.8);
+  backdrop-filter: blur(24px);
+  border-radius: 32px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  color: #f0f0ff;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Glowing Orbs */
+.skill-form-container::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.form-header h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.form-header p {
+  color: rgba(200, 200, 255, 0.5);
+  font-size: 1.1rem;
+}
+
+.skill-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group label {
+  font-weight: 800;
+  color: #a78bfa;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(167, 139, 250, 0.15);
+  border-radius: 18px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #7c3aed;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(167, 139, 250, 0.6)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  background-size: 1.2rem;
+}
+
+select option {
+  background: #0d0617;
+  color: #fff;
+}
+
+/* ── Availability Section ────────────────── */
+.availability-section {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 1rem;
+}
+
+.availability-section h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.availability-section p {
+  color: rgba(200, 200, 255, 0.4);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.availability-slot {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.availability-slot:hover {
+  border-color: rgba(167, 139, 250, 0.2);
+}
+
+.slot-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.remove-button {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 0.6rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.remove-button:hover:not(:disabled) {
+  background: #ef4444;
+  color: #fff;
+}
+
+.remove-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.add-button {
+  background: rgba(124, 58, 237, 0.1);
+  color: #a78bfa;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 1rem;
+  border-radius: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.add-button:hover {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+/* ── Actions ─────────────────────────────── */
+.form-actions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 20px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 2;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.5);
+}
+
+.submit-button:disabled {
+  background: #374151;
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cancel-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e7ff;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  padding: 1.1rem;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.cancel-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  margin-bottom: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-error::before {
+  content: '⚠️';
+}
+
+/* ── Loading ─────────────────────────────── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  color: #7c3aed;
+  font-size: 1.2rem;
+  font-weight: 900;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.98); }
+}
+
+@media (max-width: 768px) {
+  .skill-form-container { padding: 2rem 1.5rem; margin: 1.5rem; border-radius: 24px; }
+  .slot-row { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column; }
+}

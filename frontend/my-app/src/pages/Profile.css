@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   PROFILE - DARK PREMIUM "ROSE-DARK" THEME
+   ========================================= */
+
+.profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 6rem;
+  font-family: 'Inter', sans-serif;
+  background: #050510;
+  min-height: 100vh;
+  color: #f0f0ff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Glowing Blobs */
+.profile-container::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.profile-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(190, 24, 93, 0.08), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: white;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform: rotate(-3deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-avatar:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* ── Profile Cards ───────────────────────── */
+.profile-card {
+  background: rgba(15, 12, 41, 0.7);
+  backdrop-filter: blur(24px);
+  border-radius: 28px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.info-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-stars {
+  color: #f59e0b;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  display: inline-flex;
+}
+
+.star.filled {
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+}
+
+.rating-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.no-rating {
+  color: rgba(200, 200, 255, 0.4);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* ── Gamification Stats ──────────────────── */
+.gamification-card {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(190, 24, 93, 0.1));
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.gamification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.gamification-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gamification-points {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.points-big {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.points-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(200, 200, 255, 0.5);
+}
+
+.gamification-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.profile-badge-chip {
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 0.6rem 1.25rem;
+  border: 2px solid;
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-badge-chip:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Profile Sections ────────────────────── */
+.profile-section {
+  margin-bottom: 4rem;
+}
+
+.profile-section-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-icon {
+  width: 28px;
+  height: 28px;
+  fill: #a78bfa;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.skill-title {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.skill-category {
+  background: rgba(124, 58, 237, 0.15);
+  color: #a78bfa;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.skill-level {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.level-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #be185d);
+  border-radius: 4px;
+}
+
+/* ── Reviews List ────────────────────────── */
+.reviews-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.review-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.review-item:hover {
+  border-color: rgba(167, 139, 250, 0.2);
+  transform: scale(1.01);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.reviewer-avatar {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #312e81, #1e1b4b);
+  color: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reviewer-name {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.rating-date {
+  color: rgba(200, 200, 255, 0.4);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.review-comment {
+  color: #e0e7ff;
+  line-height: 1.7;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+}
+
+/* ── States ──────────────────────────────── */
+.empty-state {
+  background: rgba(255, 255, 255, 0.02);
+  color: rgba(200, 200, 255, 0.3);
+  padding: 3rem;
+  text-align: center;
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1.5rem;
+  color: #a78bfa;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.05);
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .profile-header h1 { font-size: 2.2rem; }
+  .profile-card { padding: 1.5rem; }
+  .info-item { text-align: center; }
+  .rating-container { justify-content: center; }
+  .review-header { flex-direction: column; align-items: flex-start; }
+}

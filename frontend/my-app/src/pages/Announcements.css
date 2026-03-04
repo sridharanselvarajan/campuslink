@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   CAMPUS ANNOUNCEMENTS - DARK PREMIUM THEME
+   ========================================= */
+
+.announcements-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+  font-family: 'Inter', sans-serif;
+  color: #f0f0ff;
+}
+
+.announcements-title {
+  font-size: 2.8rem;
+  font-weight: 950;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.04em;
+  position: relative;
+  display: inline-block;
+}
+
+.announcements-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 6px;
+  background: #7c3aed;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+/* Announcement Form (Admin) */
+.announcement-form {
+  background: rgba(15, 12, 41, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 2.5rem;
+  margin-bottom: 3.5rem;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.announcement-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(167, 139, 250, 0.1);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.announcement-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+textarea.announcement-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.announcement-input {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a78bfa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1.25rem center;
+  background-size: 1.2rem;
+  padding-right: 3.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.announcement-button {
+  flex: 1;
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 1rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 25px rgba(190, 24, 93, 0.3);
+}
+
+.announcement-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(190, 24, 93, 0.45);
+}
+
+.announcement-cancel {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(200, 200, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.announcement-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.no-announcements {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: rgba(200, 200, 255, 0.3);
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Edit/Delete Overlay Hooks */
+.edit-buttons {
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.announcement-item:hover .edit-buttons {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.announcement-edit, .announcement-delete {
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.announcement-edit {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.announcement-edit:hover {
+  background: #f59e0b;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+}
+
+.announcement-delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.announcement-delete:hover {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+  .announcements-container { padding: 2rem 1rem; }
+  .announcements-title { font-size: 2.2rem; }
+  .announcement-form { padding: 1.5rem; }
+  .form-actions { flex-direction: column; }
+}

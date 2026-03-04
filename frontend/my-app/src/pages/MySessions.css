@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   MY SESSIONS - DARK PREMIUM "ROSE-DARK" THEME
+   ========================================= */
+
+.my-sessions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 6rem;
+  font-family: 'Inter', sans-serif;
+  background: #050510;
+  min-height: 100vh;
+  color: #f0f0ff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Glowing Blobs */
+.my-sessions-container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.my-sessions-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(190, 24, 93, 0.08), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.my-sessions-container h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3.5rem;
+  text-align: center;
+  letter-spacing: -0.04em;
+}
+
+.sessions-section {
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sessions-section h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #a78bfa;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.sessions-section h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(167, 139, 250, 0.2), transparent);
+}
+
+.session-card {
+  background: rgba(15, 12, 41, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 2.2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.session-card:hover {
+  transform: translateY(-8px);
+  background: rgba(15, 12, 41, 0.8);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.session-card h4 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.session-card p {
+  margin: 0.6rem 0;
+  color: rgba(200, 200, 255, 0.7);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.session-card p b {
+  color: #a78bfa;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  min-width: 80px;
+}
+
+/* Status Badges */
+.session-card p b[title="Status"] {
+  display: inline-flex;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.session-card p b[title="Status"][data-status="Pending"] {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.session-card p b[title="Status"][data-status="Confirmed"] {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.session-card p b[title="Status"][data-status="Cancelled"] {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.session-card p b[title="Status"][data-status="Completed"] {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* ── Actions ─────────────────────────────── */
+.session-actions {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.session-actions button {
+  padding: 0.8rem 1.75rem;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  white-space: nowrap;
+}
+
+.session-actions button:hover {
+  transform: scale(1.05);
+}
+
+/* Specific Button Themes */
+.sessions-section:nth-of-type(1) .session-actions button:first-child {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.sessions-section:nth-of-type(1) .session-actions button:last-child {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.sessions-section:nth-of-type(1) .session-actions button:last-child:hover {
+  background: #f87171;
+  color: #fff;
+}
+
+.session-actions button:only-child {
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+}
+
+/* ── States ──────────────────────────────── */
+.no-sessions {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  color: rgba(200, 200, 255, 0.4);
+  font-size: 1.1rem;
+  font-style: normal;
+}
+
+@media (max-width: 900px) {
+  .session-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .session-actions { flex-direction: row; }
+}
+
+@media (max-width: 600px) {
+  .my-sessions-container { padding: 1.5rem 1.25rem 4rem; }
+  .session-actions { flex-direction: column; }
+  .session-card { padding: 1.5rem; }
+}

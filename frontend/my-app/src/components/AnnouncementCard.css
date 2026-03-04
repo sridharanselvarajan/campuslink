@@ -1,0 +1,126 @@
+/* =========================================
+   ANNOUNCEMENT CARD - DARK PREMIUM THEME
+   ========================================= */
+
+.announcement-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Category-based side glow and border override in Card.jsx if possible, 
+   but we'll use strong CSS classes here */
+.announcement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #7c3aed, #be185d);
+  box-shadow: 2px 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.announcement-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  flex: 1;
+}
+
+.category-badge {
+  font-size: 0.75rem !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 12px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  /* We override the inline styles from JSX using !important to enforce theme */
+}
+
+/* Specific category highlights */
+.announcement-card:has(.category-badge[style*="B91C1C"])::before, 
+.announcement-card:has(.category-badge:contains("Event"))::before {
+  background: linear-gradient(to bottom, #ef4444, #be185d);
+}
+
+.announcement-card:has(.category-badge[style*="5B21B6"])::before,
+.announcement-card:has(.category-badge:contains("News"))::before {
+  background: linear-gradient(to bottom, #7c3aed, #4f46e5);
+}
+
+.card-text {
+  color: rgba(224, 231, 255, 0.8);
+  line-height: 1.7;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(200, 200, 255, 0.4);
+  font-weight: 600;
+}
+
+.author, .date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.author svg, .date svg {
+  color: #a78bfa;
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .announcement-card { padding: 1.5rem; }
+  .card-header { flex-direction: column; gap: 0.75rem; }
+  .card-title { font-size: 1.3rem; }
+  .card-footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

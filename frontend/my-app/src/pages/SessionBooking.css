@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   SESSION BOOKING - DARK PREMIUM THEME
+   ========================================= */
+
+.session-booking-container {
+  max-width: 650px;
+  margin: 3rem auto;
+  padding: 3.5rem 3rem;
+  background: rgba(15, 12, 41, 0.8);
+  backdrop-filter: blur(24px);
+  border-radius: 32px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', sans-serif;
+  color: #f0f0ff;
+  border: 1px solid rgba(167, 139, 250, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Glowing Orbs */
+.session-booking-container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.booking-header h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: -0.5rem;
+}
+
+.skill-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
+
+.skill-id-label {
+  font-size: 0.75rem;
+  color: rgba(200, 200, 255, 0.4);
+  font-family: monospace;
+}
+
+.skill-category {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #a78bfa;
+  background: rgba(124, 58, 237, 0.1);
+  padding: 0.4rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group label {
+  font-weight: 800;
+  color: #a78bfa;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.time-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(167, 139, 250, 0.15);
+  border-radius: 18px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color-scheme: dark; /* Ensures browser picker is dark */
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+  outline: none;
+  border-color: #7c3aed;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 20px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 2;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.5);
+}
+
+.submit-button:disabled {
+  background: #374151;
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cancel-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e7ff;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  padding: 1.1rem;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.cancel-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  padding: 1.1rem 1.5rem;
+  border-radius: 18px;
+  font-weight: 700;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  font-size: 0.95rem;
+}
+
+/* ── Suggested Slots Styling ─────────────── */
+.suggested-slots-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(167, 139, 250, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.suggested-slots-container label {
+  display: block;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.suggesting-text {
+  color: rgba(200, 200, 255, 0.5);
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.no-slots-text {
+  color: #f87171;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.05);
+  border-radius: 12px;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.slot-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  color: #e0e7ff;
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slot-btn:hover {
+  border-color: #7c3aed;
+  background: rgba(124, 58, 237, 0.1);
+  transform: translateY(-3px);
+}
+
+.slot-btn.selected {
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+  transform: scale(1.05);
+}
+
+/* ── States ──────────────────────────────── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  color: #7c3aed;
+  font-size: 1.2rem;
+  font-weight: 900;
+  animation: pulse 1.5s infinite;
+}
+
+.error-message {
+  color: #f87171;
+  font-weight: 700;
+  padding: 3rem;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .session-booking-container { padding: 2rem 1.5rem; margin: 1.5rem; border-radius: 24px; }
+  .time-inputs { grid-template-columns: 1fr; gap: 1rem; }
+  .form-actions { flex-direction: column; }
+}

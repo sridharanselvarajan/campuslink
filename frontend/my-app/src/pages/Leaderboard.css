@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   LEADERBOARD - DARK PREMIUM "ROSE-DARK" THEME
+   ========================================= */
+
+.leaderboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 6rem;
+  font-family: 'Inter', sans-serif;
+  background: #050510;
+  min-height: 100vh;
+  color: #f0f0ff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Glowing Blobs */
+.leaderboard-container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.leaderboard-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(190, 24, 93, 0.08), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.leaderboard-hero {
+  margin-bottom: 2.5rem;
+}
+
+.hero-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.4));
+  animation: float-hero 6s ease-in-out infinite;
+}
+
+@keyframes float-hero {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.leaderboard-hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+}
+
+.leaderboard-hero p {
+  color: rgba(200, 200, 255, 0.6);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── Points Legend ───────────────────────── */
+.points-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 2.5rem;
+  background: rgba(15, 12, 41, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 24px;
+  margin-top: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.legend-item {
+  font-size: 0.95rem;
+  color: #e0e7ff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.legend-item strong {
+  color: #a78bfa;
+}
+
+/* ── Leaderboard List ────────────────────── */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+  background: rgba(15, 12, 41, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.leaderboard-row:hover {
+  transform: translateX(10px) scale(1.01);
+  background: rgba(15, 12, 41, 0.8);
+  border-color: rgba(167, 139, 250, 0.3);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Rank Highlights */
+.rank-gold {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(15, 12, 41, 0.8));
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.15);
+}
+
+.rank-silver {
+  background: linear-gradient(135deg, rgba(156, 163, 175, 0.1), rgba(15, 12, 41, 0.8));
+  border: 1.5px solid rgba(156, 163, 175, 0.4);
+}
+
+.rank-bronze {
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.1), rgba(15, 12, 41, 0.8));
+  border: 1.5px solid rgba(180, 83, 9, 0.4);
+}
+
+.rank-badge {
+  min-width: 60px;
+  text-align: center;
+}
+
+.rank-icon {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(200, 200, 255, 0.5);
+  font-family: 'Inter', sans-serif;
+}
+
+.rank-gold .rank-icon { font-size: 2.2rem; filter: drop-shadow(0 0 10px #f59e0b); }
+.rank-silver .rank-icon { font-size: 2rem; filter: drop-shadow(0 0 8px #9ca3af); }
+.rank-bronze .rank-icon { font-size: 1.9rem; filter: drop-shadow(0 0 8px #b45309); }
+
+.user-avatar-lb {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform: rotate(-3deg);
+}
+
+.user-info-lb {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.user-name-lb {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.user-badges-lb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.badge-chip {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.8rem;
+  border: 1.5px solid;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s;
+}
+
+.badge-chip:hover {
+  transform: scale(1.1);
+}
+
+.no-badges {
+  font-size: 0.8rem;
+  color: rgba(200, 200, 255, 0.3);
+  font-style: italic;
+}
+
+.user-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.points-value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.points-label {
+  font-size: 0.8rem;
+  color: rgba(200, 200, 255, 0.4);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── States ──────────────────────────────── */
+.leaderboard-loading {
+  text-align: center;
+  padding: 6rem 2rem;
+  color: #a78bfa;
+}
+
+.loading-pulse {
+  font-size: 1.5rem;
+  font-weight: 800;
+  animation: lb-pulse 2s ease-in-out infinite;
+  letter-spacing: 0.1em;
+}
+
+@keyframes lb-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.95); }
+}
+
+.no-data {
+  text-align: center;
+  padding: 5rem 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  color: rgba(200, 200, 255, 0.4);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-container { padding: 1.5rem 1.25rem 4rem; }
+  .leaderboard-row { padding: 1rem 1.25rem; gap: 1rem; }
+  .hero-icon { font-size: 3rem; }
+  .leaderboard-hero h1 { font-size: 2.2rem; }
+  .user-name-lb { font-size: 1rem; }
+  .points-value { font-size: 1.6rem; }
+  .points-legend { gap: 1rem; padding: 1rem; }
+}
