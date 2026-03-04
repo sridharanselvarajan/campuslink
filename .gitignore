@@ -1,0 +1,15 @@
+# Node modules (both frontend & backend)
+node_modules/
+*/node_modules/
+
+# Environment files (keep secrets safe)
+.env
+*/.env
+frontend/my-app/.env
+
+# React build output
+frontend/my-app/build/
+
+# OS files
+.DS_Store
+Thumbs.db
